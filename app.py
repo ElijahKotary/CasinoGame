@@ -15,3 +15,22 @@ class game_info:
     print("Maximum bet is $10")
     print("------------------------------------------------------------------")
 
+def total_bank(bank):
+    bet = 0
+    while bet <= 0 or bet > min([500,bank]):
+        print(f"You have ${bank} in your bank.")
+        a = input("Enter your bet ")
+        bet = int(a)
+    return bank,bet
+
+def get_guess():
+    guess = 0
+    while (guess < 2 or guess > 12):
+        try:
+            guess = int(input("Choose a number between 2 and 12: "))
+        except ValueError:
+            guess = 0
+        return guess
+
+game_info()
+bank = 500
