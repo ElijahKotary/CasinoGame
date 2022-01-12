@@ -34,3 +34,16 @@ def get_guess():
 
 game_info()
 bank = 500
+
+while True:
+    bank,bet = total_bank(bank)
+    guess = get_guess()
+
+    if guess == rollIt():
+        bank += bet
+        
+    else:
+        bank = bank - bet
+
+    print(f'You have ${bank} in your bank.')
+    print(f'Thanks for playing!\n')
